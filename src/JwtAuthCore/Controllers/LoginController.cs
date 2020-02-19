@@ -3,6 +3,10 @@ using Microsoft.AspNetCore.Mvc;
 using JwtAuthCore.Helpers.Interface;
 using JwtAuthCore.Model;
 using System.Linq;
+using System.Net.Http;
+using Newtonsoft.Json;
+using System.Net.Http.Headers;
+using Utility;
 
 namespace JwtAuthCore.Controllers
 {
@@ -27,11 +31,18 @@ namespace JwtAuthCore.Controllers
 
         [AllowAnonymous] // 不要求 Authorization
         [HttpPost("~/signin")]
-        public ActionResult<string> SignIn(LoginModel login)
+        public IActionResult SignIn(LoginModel login)
         {
+            HttpResponseMessage response = new HttpResponseMessage();
+
             if (ValidateUser(login))
             {
-                return _jwt.GenerateToken(login.Username, login.Roles, login.ExpireMinutes);
+                // 產生 JWT token
+                string jwtToken = _jwt.GenerateToken(login.Username, login.Roles, login.ExpireMinutes);
+
+                response.Content = new StringContent(JsonConvert.SerializeObject(new { token = jwtToken }));
+                response.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+                return new HttpResponseMessageResult(response);
             }
             else
             {

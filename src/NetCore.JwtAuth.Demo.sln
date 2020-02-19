@@ -5,7 +5,9 @@ VisualStudioVersion = 16.0.29709.97
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web", "Web\Web.csproj", "{182045B1-BAF1-4927-B751-A3737FF39FFC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JwtAuthCore", "JwtAuthCore\JwtAuthCore.csproj", "{C7972F85-35A6-48D2-B5A9-59D15C40ECFE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JwtAuthCore", "JwtAuthCore\JwtAuthCore.csproj", "{C7972F85-35A6-48D2-B5A9-59D15C40ECFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utility", "Utility\Utility.csproj", "{624CC00D-3D74-4260-83D6-A0B9650DD3B2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{C7972F85-35A6-48D2-B5A9-59D15C40ECFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7972F85-35A6-48D2-B5A9-59D15C40ECFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7972F85-35A6-48D2-B5A9-59D15C40ECFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{624CC00D-3D74-4260-83D6-A0B9650DD3B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{624CC00D-3D74-4260-83D6-A0B9650DD3B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{624CC00D-3D74-4260-83D6-A0B9650DD3B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{624CC00D-3D74-4260-83D6-A0B9650DD3B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
