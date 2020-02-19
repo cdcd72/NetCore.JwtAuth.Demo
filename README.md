@@ -5,14 +5,82 @@
 練習 JWT Token-based authentication 實作於 .NET Core 3.1 上。  
 To practice how jwt token-based authentication implement on .NET Core 3.1.  
 
-# Last Version
+## Running the project
+If you want to interactively test the application, you can use [Postman](https://www.getpostman.com/) or any other Http client.
+
+1. Run the project from Visual Studio 2019 or by typing `dotnet run` in a command window
+2. Launch _Postman_ and make a GET request as follows:
+
+```
+    GET https://localhost:5001/limitedapi HTTP/1.1
+    cache-control: no-cache
+    Accept: */*
+    Host: localhost:5001
+    accept-encoding: gzip, deflate, br
+    Connection: keep-alive
+```
+
+This should return a 401 HTTP status code (_Unauthorized_)
+
+3. Make a POST request like the following:
+
+```
+    POST https://localhost:5001/signin HTTP/1.1
+    cache-control: no-cache
+    Content-Type: application/json
+    Accept: */*
+    Host: localhost:5001
+    accept-encoding: gzip, deflate, br
+    content-length: 88
+    Connection: keep-alive
+
+    HTTP message body:
+    { "Username": "neil", "Password": "secret", "Roles": ["User"], "ExpireMinutes": 30 }
+```
+
+It returns a JSON object like the following:
+
+```
+    {
+       "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJuZWlsIiwianRpIjoiZGMxODBiZGQtODBkZC00OTE4LWJiNmUtNjEwYjY4M2U3OWVmIiwicm9sZXMiOiJVc2VyIiwibmJmIjoxNTgyMTAyNTc4LCJleHAiOjE1ODIxMDQzNzgsImlhdCI6MTU4MjEwMjU3OCwiaXNzIjoiSnd0QXV0aElzc3VlciJ9.dnmIWJkBSFmE5rMUPiZhA0p6SdjC1xMu9RhHs-jrlkk"
+    }
+```
+
+4. The following GET request
+
+```
+    GET https://localhost:5001/limitedapi HTTP/1.1
+    cache-control: no-cache
+    Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJuZWlsIiwianRpIjoiZGMxODBiZGQtODBkZC00OTE4LWJiNmUtNjEwYjY4M2U3OWVmIiwicm9sZXMiOiJVc2VyIiwibmJmIjoxNTgyMTAyNTc4LCJleHAiOjE1ODIxMDQzNzgsImlhdCI6MTU4MjEwMjU3OCwiaXNzIjoiSnd0QXV0aElzc3VlciJ9.dnmIWJkBSFmE5rMUPiZhA0p6SdjC1xMu9RhHs-jrlkk
+    Accept: */*
+    Host: localhost:5001
+    accept-encoding: gzip, deflate, br
+    Connection: keep-alive
+```
+
+returns the following response:
+
+```
+[
+    "Jwt",
+    "Get( Authorized )"
+]
+```
+
+## Todo
+Unit Test for this project.
+
+## Last Version
 1.0.0.0 (February 19, 2020)
-# Record
+
+## Record
 * 1.0.0.0
   * Initial Commit (初次上版)
-# Refer Github
+  
+## Refer Github
 [JwtAuthDemo](https://github.com/doggy8088/JwtAuthDemo) by doggy8088  
-# Refer Article
+
+## Refer Article
 * English
   * [jwt.io](https://jwt.io/)  
   * [ASP.NET Core 3.1 - JWT Authentication Tutorial with Example API](https://jasonwatmore.com/post/2019/10/11/aspnet-core-3-jwt-authentication-tutorial-with-example-api)  
