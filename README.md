@@ -5,7 +5,7 @@
 練習 JWT Token-based authentication 實作於 .NET Core 3.1 上。  
 To practice how jwt token-based authentication implement on .NET Core 3.1.  
 
-## Running the project
+## 運行專案
 > 這個方案含有測試專案用於驗證應用程式行為。你可以透過 Visual Studio 2019 或者是利用 `dotnet test` 指令跑測試。  
 
 The solution contains a Test project validating the application behaviour. You can run the tests from Visual Studio 2019 or by typing `dotnet test` in a command window.  
@@ -85,17 +85,17 @@ returns the following response:
 ]
 ```
 
-## Last Version
+## 最後版本
 1.0.0.0 (February 19, 2020)
 
-## Record
+## 記錄
 * 1.0.0.0
   * Initial Commit (初次上版)
   
-## Refer Github
+## 參考 github
 [JwtAuthDemo](https://github.com/doggy8088/JwtAuthDemo) by doggy8088  
 
-## Refer Article
+## 參考文章
 * English
   * [jwt.io](https://jwt.io/)  
   * [ASP.NET Core 3.1 - JWT Authentication Tutorial with Example API](https://jasonwatmore.com/post/2019/10/11/aspnet-core-3-jwt-authentication-tutorial-with-example-api)  
