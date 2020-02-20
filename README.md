@@ -63,7 +63,8 @@ returns the following response:
 ```
 [
     "Jwt",
-    "Get( Authorized )"
+    "Get",
+    "Authorized"
 ]
 ```
 
