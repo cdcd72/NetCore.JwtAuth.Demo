@@ -6,16 +6,18 @@
 To practice how jwt token-based authentication implement on .NET Core 3.1.  
 
 ## Running the project
-這個方案含有測試專案用於驗證應用程式行為。你可以透過 Visual Studio 2019 或者是利用 `dotnet test` 指令跑測試。  
+> 這個方案含有測試專案用於驗證應用程式行為。你可以透過 Visual Studio 2019 或者是利用 `dotnet test` 指令跑測試。  
+
 The solution contains a Test project validating the application behaviour. You can run the tests from Visual Studio 2019 or by typing `dotnet test` in a command window.  
 
-假如你想要直接測試應用程式，可以使用 [Postman](https://www.getpostman.com/) 或其他一些用於模擬 Client-side 行為的應用程式。  
+> 假如你想要直接測試應用程式，可以使用 [Postman](https://www.getpostman.com/) 或其他一些用於模擬 Client-side 行為的應用程式。  
+
 If you want to interactively test the application, you can use [Postman](https://www.getpostman.com/) or any other Http client.
 
-１. 透過 Visual Studio 2019 或者利用 `dotnet run` 指令先把專案跑起來。
+> 透過 Visual Studio 2019 或者利用 `dotnet run` 指令先把專案跑起來。
 1. Run the project from Visual Studio 2019 or by typing `dotnet run` in a command window  
 
-２. 透過 _Postman_ 製作一個如下所示之 GET 要求  
+> 透過 _Postman_ 製作一個如下所示之 GET 要求  
 2. Launch _Postman_ and make a GET request as follows:
 
 ```
@@ -27,10 +29,11 @@ If you want to interactively test the application, you can use [Postman](https:/
     Connection: keep-alive
 ```
 
-打出去之後，得到的回應應該為 401 未經授權的要求。  
+> 打出去之後，得到的回應應該為 401 未經授權的要求。 
+
 This should return a 401 HTTP status code (_Unauthorized_)
 
-３. 製作一個如下所示之 POST 要求   
+> 製作一個如下所示之 POST 要求   
 3. Make a POST request like the following:
 
 ```
@@ -47,7 +50,8 @@ This should return a 401 HTTP status code (_Unauthorized_)
     { "Username": "neil", "Password": "secret", "Roles": ["User"], "ExpireMinutes": 30 }
 ```
 
-它將回傳一個如下所示之 JSON 物件。  
+> 它將回傳一個如下所示之 JSON 物件。  
+
 It returns a JSON object like the following:
 
 ```
@@ -56,7 +60,7 @@ It returns a JSON object like the following:
     }
 ```
 
-４. 接著將得到的 Token 於第二點所製作的 GET 要求新增 HTTP Header Authorization。  
+> 接著將得到的 Token 於第二點所製作的 GET 要求新增 HTTP Header Authorization。  
 4. The following GET request
 
 ```
@@ -69,7 +73,8 @@ It returns a JSON object like the following:
     Connection: keep-alive
 ```
 
-便可以得到以下回應。  
+> 便可以得到以下回應。  
+
 returns the following response:
 
 ```
