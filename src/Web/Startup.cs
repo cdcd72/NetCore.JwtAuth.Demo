@@ -42,6 +42,7 @@ namespace Web
                     {
                         // 透過這項宣告，就可以從 "sub" 取值並設定給 User.Identity.Name
                         NameClaimType = "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier",
+
                         // 透過這項宣告，就可以從 "roles" 取值，並可讓 [Authorize] 判斷角色
                         RoleClaimType = "http://schemas.microsoft.com/ws/2008/06/identity/claims/role",
 
@@ -57,9 +58,7 @@ namespace Web
                         ValidateLifetime = true,
 
                         // 如果 Token 中包含 key 才需要驗證，一般都只有簽章而已
-                        ValidateIssuerSigningKey = false,
-
-                        // "1234567890123456" 應該從 IConfiguration 取得
+                        ValidateIssuerSigningKey = true,
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration.GetValue<string>("JwtSettings:SignKey")))
                     };
                 });
