@@ -19,34 +19,34 @@ namespace Web.Controllers
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            return new string[] { "Jwt", "Get( Not Authorize )" };
+            return new string[] { "Jwt", "Get", "Not Authorize" };
         }
 
         [HttpGet("~/notlimitedapi")]
         public IEnumerable<string> GetNotLimitedAPI()
         {
-            return new string[] { "Jwt", "Get( Not Authorize )" };
+            return new string[] { "Jwt", "Get", "Not Authorize" };
         }
 
         [Authorize] // 要求 Authorization
         [HttpGet("~/limitedapi")]
         public IEnumerable<string> GetLimitedAPI()
         {
-            return new string[] { "Jwt", "Get( Authorized )" };
+            return new string[] { "Jwt", "Get", "Authorized" };
         }
 
         [Authorize(Roles = "Admin")] // 要求 Authorization 且要有 Admin 規則
         [HttpGet("~/limitedwithadminroleapi")]
         public IEnumerable<string> GetLimitedWithAdminRoleAPI()
         {
-            return new string[] { "Jwt", "Get( Authorized With Role = Admin )" };
+            return new string[] { "Jwt", "Get", "Authorized With Role = Admin" };
         }
 
         [Authorize(Roles = "Admin,User")] // 要求 Authorization 且要有 Admin 或 User 規則
-        [HttpGet("~/limitedwithuserroleapi")]
-        public IEnumerable<string> GetLimitedWithAdminAndUserRoleAPI()
+        [HttpGet("~/limitedwithadminoruserroleapi")]
+        public IEnumerable<string> GetLimitedWithAdminOrUserRoleAPI()
         {
-            return new string[] { "Jwt", "Get( Authorized With Role = Admin or User )" };
+            return new string[] { "Jwt", "Get", "Authorized With Role = Admin or User" };
         }
     }
 }

@@ -6,6 +6,7 @@
 To practice how jwt token-based authentication implement on .NET Core 3.1.  
 
 ## Running the project
+The solution contains a Test project validating the application behaviour. You can run the tests from Visual Studio 2019 or by typing `dotnet test` in a command window.  
 If you want to interactively test the application, you can use [Postman](https://www.getpostman.com/) or any other Http client.
 
 1. Run the project from Visual Studio 2019 or by typing `dotnet run` in a command window
@@ -67,9 +68,6 @@ returns the following response:
     "Authorized"
 ]
 ```
-
-## Todo
-Unit Test for this project.
 
 ## Last Version
 1.0.0.0 (February 19, 2020)

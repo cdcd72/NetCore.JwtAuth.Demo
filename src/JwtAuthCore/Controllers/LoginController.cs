@@ -57,7 +57,13 @@ namespace JwtAuthCore.Controllers
         /// <returns></returns>
         private bool ValidateUser(LoginModel login)
         {
-            return true; // TODO: 驗證使用者邏輯可撰寫於此...
+            bool validated = false;
+
+            // 驗證使用者邏輯可自行定義於此...
+            if (login.Username == "neil" && login.Password == "secret")
+                validated = true;
+
+            return validated;
         }
 
         /// <summary>
